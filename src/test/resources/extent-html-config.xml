@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+        <documentTitle>Test Automation Report</documentTitle>
+        <reportName>Extent Report - Automation Test Results</reportName>
+        <theme>standard</theme>
+        <enableChart>true</enableChart>
+        <timelineEnabled>true</timelineEnabled>
+    </configuration>
+</extentreports>
