@@ -1,6 +1,6 @@
 Feature: Loop With LLM Component WorkFlow Feature
 
-  @CreateNewLoopWithLLMWorkFlowAndPublish
+  @CreateNewLoopWithLLMWorkFlowAndPublish @Test
   Scenario Outline: Create a new Loop With LLM Component Workflow and Publish
     Given I login to the slate page with username as <email> and password as <password>
     Then I navigate to the workflow page
