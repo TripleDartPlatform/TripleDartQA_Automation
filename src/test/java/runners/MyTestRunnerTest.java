@@ -15,5 +15,5 @@ import org.junit.runner.RunWith;
                     ,"json:target/cucumber-reports.json"
                     ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
-public class TestRunner {
+public class MyTestRunnerTest  {
 }
