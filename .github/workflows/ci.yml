@@ -23,4 +23,4 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run Cucumber TestRunner
-        run: mvn -Dtest=com.example.runner.MyTestRunner test
+        run: mvn -Dtest=com.example.runner.MyTestRunner TestRunner
