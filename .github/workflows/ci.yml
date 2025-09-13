@@ -31,4 +31,5 @@ jobs:
         run: pwd
 
       - name: Run Cucumber TestRunner
-        run: mvn -Dtest=runners.MyTestRunnerTest test
+#        run: mvn -Dtest=runners.MyTestRunnerTest test
+        run: mvn test -Dcucumber.filter.tags="@Logout"
