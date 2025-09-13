@@ -40,7 +40,7 @@ Feature: POC Feature
         | email                   | password            |  |  |  |  |  |  |
         | "kamesh25491@gmail.com" | "HighPerformance@1" |  |  |  |  |  |  |
 
-      @Logout
+      @Test
       Scenario Outline: Logout Validation
         Given I login to the slate page with username as <email> and password as <password>
         Then I navigate to the workflow page
