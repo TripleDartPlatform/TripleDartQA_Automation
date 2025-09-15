@@ -2,7 +2,7 @@ Feature: Keyword Overview Component WorkFlow Feature
 
   @CreateNewKeywordOverviewWorkFlowAndPublish
   Scenario Outline: Create a new Keyword Overview Component Workflow and Publish
-    Given I login to the slate page with username as <email> and password as <password>
+#    Given I login to the slate page with username as <email> and password as <password>
     Then I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element

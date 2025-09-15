@@ -2,7 +2,7 @@ Feature: Web Scrape Component WorkFlow Feature
 
   @CreateNewWebScrapeWorkFlowAndPublish
   Scenario Outline: Create a new Web Scrape Component Workflow and Publish
-    Given I login to the slate page with username as <email> and password as <password>
+#    Given I login to the slate page with username as <email> and password as <password>
     Then I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
@@ -28,7 +28,7 @@ Feature: Web Scrape Component WorkFlow Feature
     And I wait for the results to load
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
-    And I logout from the application
+#    And I logout from the application
     Examples:
       | email                   | password            | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1 | defaultValue                            | dataSource | workflowName | position | workflowDescription | status  |  |  |  |  |
       | "kamesh25491@gmail.com" | "HighPerformance@1" | KeyLBL    | Configure Step | testlbl      | KeyName          | HelpKeyTest   | Web Scrape  | https://app.slatehq.ai/ws/114/workflows | Input      | Web Scrape   | 1        | Web Scrape Test     | Version |  |  |  |  |

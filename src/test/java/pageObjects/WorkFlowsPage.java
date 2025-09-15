@@ -6,7 +6,6 @@ import java.util.List;
 
 import factory.DriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,8 +42,8 @@ public class WorkFlowsPage {
     @FindBy(how = How.XPATH, using = "//div[@class='tiptap ProseMirror']//p")
     private WebElement txtArea_SearchResults;
 
-    @FindBy(how = How.XPATH, using = "//*[name()='g']//*[name()='rect']")
-    private List<WebElement> element_PlaceHolders;
+//    @FindBy(how = How.XPATH, using = "//*[name()='g']//*[name()='rect']")
+//    private List<WebElement> element_PlaceHolders;
 
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Create workflow')]")
     private WebElement btn_CreateWorkFlow;
@@ -83,7 +82,7 @@ public class WorkFlowsPage {
             utils.clickElement(menu_Workflows, 10);
             // Wait for the title to be visible
             wait.until(ExpectedConditions.visibilityOf(title_Workflows));
-            utils.takeSnapShot(utils.getMethodByName());
+            //utils.takeSnapShot(utils.getMethodByName());
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
@@ -152,21 +151,21 @@ public class WorkFlowsPage {
         }
     }
 
-    public void dragAndDropTheComponentBasedOnPositionInCanvas(String componentName,String position) {
-        try {
-            WebElement dragElement = driver.findElement(By.xpath("//div[contains(text(),'" + componentName + "')]"));
-            List<WebElement> dropElement = driver.findElements(By.xpath("//*[name()='g']//*[name()='rect']"));
-            utils.waitUntilElementToBeClickable(dragElement,10);
-            // Wait for the Google Search element to be present and clickable
-            wait.until(ExpectedConditions.elementToBeClickable(dragElement));
-            // Drag and drop the Google Search element to the canvas
-            utils.dragAndDropWithPosition(dragElement,dropElement,position);
-            System.out.println("Drag and drop action performed for: " + componentName);
-        } catch (Exception e) {
-            System.out.println("An error occurred: " + e.getMessage());
-            throw new RuntimeException(e.getMessage());
-        }
-    }
+//    public void dragAndDropTheComponentBasedOnPositionInCanvas(String componentName,String position) {
+//        try {
+//            WebElement dragElement = driver.findElement(By.xpath("//div[contains(text(),'" + componentName + "')]"));
+//            List<WebElement> dropElement = driver.findElements(By.xpath("//*[name()='g']//*[name()='rect']"));
+//            utils.waitUntilElementToBeClickable(dragElement,10);
+//            // Wait for the Google Search element to be present and clickable
+//            wait.until(ExpectedConditions.elementToBeClickable(dragElement));
+//            // Drag and drop the Google Search element to the canvas
+//            utils.dragAndDropWithPosition(dragElement,dropElement,position);
+//            System.out.println("Drag and drop action performed for: " + componentName);
+//        } catch (Exception e) {
+//            System.out.println("An error occurred: " + e.getMessage());
+//            throw new RuntimeException(e.getMessage());
+//        }
+//    }
 
     public void enterSearchTerm(String searchParam) {
         try {

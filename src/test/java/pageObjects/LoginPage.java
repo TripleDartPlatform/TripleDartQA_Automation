@@ -6,7 +6,6 @@ import java.util.List;
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -48,9 +47,9 @@ public class LoginPage {
         utils.clickElement(btn_Profile.get(1), 10);
         Thread.sleep(1000); // Adding a short wait to ensure the dropdown is visible
         utils.clickElementUsingActions(btn_Logout);
-        utils.clickElement(btn_Profile.get(1), 10);
-        Thread.sleep(1000); // Adding a short wait to ensure the dropdown is visible
-        utils.clickElementUsingActions(btn_Logout);
+//        utils.clickElement(btn_Profile.get(1), 10);
+//        Thread.sleep(1000); // Adding a short wait to ensure the dropdown is visible
+//        utils.clickElementUsingActions(btn_Logout);
     }
 
 }

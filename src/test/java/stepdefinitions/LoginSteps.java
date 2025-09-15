@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class LoginSteps {
 
-    WebDriver driver;
+//    WebDriver driver;
     LoginPage loginPage;
     private static final Logger logger = LoggerFactory.getLogger(LoginSteps.class);
 
@@ -64,18 +64,18 @@ public class LoginSteps {
         logger.info("LoggedIn successfully.");
     }
 
-    @And("I close the browser")
-    public void iCloseTheBrowser() {
-        try {
-            // Close the browser
-            DriverFactory.getDriver().quit();
-            System.out.println("Browser closed successfully.");
-            logger.info("Browser closed successfully.");
-        } catch (Exception e) {
-            // Print the exception message to the console
-            System.out.println("An error occurred while closing the browser: " + e.getMessage());
-        }
-    }
+//    @And("I close the browser")
+//    public void iCloseTheBrowser() {
+//        try {
+//            // Close the browser
+//            DriverFactory.getDriver().quit();
+//            System.out.println("Browser closed successfully.");
+//            logger.info("Browser closed successfully.");
+//        } catch (Exception e) {
+//            // Print the exception message to the console
+//            System.out.println("An error occurred while closing the browser: " + e.getMessage());
+//        }
+//    }
 
     @And("I logout from the application")
     public void iLogoutFromTheApplication() {

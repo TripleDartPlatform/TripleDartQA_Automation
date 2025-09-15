@@ -1,8 +1,8 @@
 Feature: Google Search Component WorkFlow Feature
 
-  @CreateNewGoogleSearchWorkFlowAndPublish
+  @CreateNewGoogleSearchWorkFlowAndPublish @Test
   Scenario Outline: Create a new Google Search Component Workflow and Publish
-    Given I login to the slate page with username as <email> and password as <password>
+    #Given I login to the slate page with username as <email> and password as <password>
     Then I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
@@ -23,24 +23,10 @@ Feature: Google Search Component WorkFlow Feature
     And I expand Input in the Insert Variable modal
     And I select the <variableName> variable from the list
     And I click on the Test button
+    And I click on the Test button
     And I wait for the results to load
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
     Examples:
       | email                   | password            | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1   | defaultValue    | dataSource | workflowName | position | workflowDescription | status  |  |
       | "kamesh25491@gmail.com" | "HighPerformance@1" | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Google Search | Test Automation | Input      | Google       | 1        | Google Test         | Version |  |
-
-
-#  @ParamPassedFromInputComponent
-#  Scenario Outline: Data passed as Param from Input Component
-#  Given I login to the slate page with username as <email> and password as <password>
-#    Then I navigate to the workflow page
-#    And I click on workflow titled <workflowTitle>
-#    And I drag and drop the <dataSource> element to the canvas
-#    And I click on the <configureStep> element located in the <position> of the <dataSource> element
-#    Then I enter the search term as <searchTerm>
-#    And I click on the Test button
-#    And I wait for the results to load
-#    Examples:
-#      | email                   | password            | workflowTitle     | configureStep  | dataSource    |  | searchTerm      | position |
-#      | "kamesh25491@gmail.com" | "HighPerformance@1" | "DragAndDropTest" | Configure Step | Google Search |  | Test Automation | 1        |

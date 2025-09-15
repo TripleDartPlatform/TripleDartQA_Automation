@@ -1,8 +1,8 @@
 Feature: Call API Component WorkFlow Feature
 
-  @CreateNewCallAPIWorkFlowAndPublish @GET
+  @CreateNewCallAPIWorkFlowAndPublish @Test
   Scenario Outline: Create a new CallAPI Component Workflow and Publish
-    Given I login to the slate page with username as <email> and password as <password>
+    #Given I login to the slate page with username as <email> and password as <password>
     Then I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
@@ -28,7 +28,7 @@ Feature: Call API Component WorkFlow Feature
     And I wait for the results to load
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
-    And I logout from the application
+    #And I logout from the application
     Examples:
       | email                   | password            | labelName | configureStep  | variableName   | placeholderValue | helptextValue | dataSource1 | defaultValue                        | dataSource | workflowName | position | workflowDescription | status  | requestType |  |  |  |
       | "kamesh25491@gmail.com" | "HighPerformance@1" | KeyLBL    | Configure Step | endpointurlget | KeyName          | HelpKeyTest   | Call API    | https://api.restful-api.dev/objects | Input      | CallAPIGET   | 1        | CallAPIGET Test     | Version | GET         |  |  |  |
