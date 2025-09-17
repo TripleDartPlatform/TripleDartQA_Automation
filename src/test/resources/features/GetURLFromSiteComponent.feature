@@ -23,7 +23,7 @@ Feature: Get URL From Sitemap Component WorkFlow Feature
     And I select the <variableName> variable from the list
     And I click and enter <maxLinks> in the Max Links input field
     And I click on the Test button
-    And I click on the Test button
+    #And I click on the Test button
     And I wait for the results to load
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>

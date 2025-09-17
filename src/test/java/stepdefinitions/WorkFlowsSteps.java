@@ -60,7 +60,7 @@ public class WorkFlowsSteps {
     }
 
     @And("I wait for the results to load")
-    public void iWaitForTheResultsToLoad() {
+    public void iWaitForTheResultsToLoad() throws Exception {
         workFlowsPage.validateTestResultsAreLoaded();
     }
 

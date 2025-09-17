@@ -10,9 +10,10 @@ import factory.DriverFactory;
 public class Hooks {
     static LoginPage loginPage;
     private WebDriver driver;
-
+    public static String scenarioName;
     @Before
     public void before(Scenario scenario) {
+        scenarioName = scenario.getName();
         System.out.println("Before successfully.");
         driver = DriverFactory.getDriver();
         driver.get("https://app.slatehq.ai/ws/114/workflows");

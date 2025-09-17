@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 
 import factory.DriverFactory;
+import io.cucumber.core.backend.TestCaseState;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -180,10 +181,11 @@ public class WorkFlowsPage {
 
     public void clickOnTestButton() {
         try {
+            Thread.sleep(3000);
             // Wait for the button to be present and clickable
             utils.waitUntilElementToBeClickable(btn_TestButton,10);
             // Click on the button
-            utils.clickElement(btn_TestButton,10);
+            utils.clickElementUsingActions(btn_TestButton);
             System.out.println("Clicked on the Test button: ");
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
@@ -191,13 +193,14 @@ public class WorkFlowsPage {
         }
     }
 
-    public void validateTestResultsAreLoaded() {
+    public void validateTestResultsAreLoaded() throws Exception {
         try {
             // Wait for the results to load by checking for the presence of a specific element
             utils.waitForElementToBeVisible(txtArea_SearchResults,10);
             Assert.assertTrue(txtArea_SearchResults.isDisplayed(), "Test results are not loaded successfully.");
             System.out.println("Results loaded successfully.");
         } catch (Exception e) {
+            utils.takeSnapShot(hooks.Hooks.scenarioName);
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
