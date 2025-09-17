@@ -1,9 +1,8 @@
 Feature: Human Review Component WorkFlow Feature
 
-  @CreateNewHumanReviewWorkFlowAndPublish
+  @CreateNewHumanReviewWorkFlowAndPublish @RegressionTest
   Scenario Outline: Create a new Human Review Component Workflow and Publish
-#    Given I login to the slate page with username as <email> and password as <password>
-    Then I navigate to the workflow page
+    When I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
     Then I click on add field button
@@ -33,6 +32,6 @@ Feature: Human Review Component WorkFlow Feature
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
     Examples:
-      | email                   | password            | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1  | defaultValue    | dataSource | workflowName | position | workflowDescription | status  |  |
-      | "kamesh25491@gmail.com" | "HighPerformance@1" | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Human Review | Test Automation | Input      | Human Review | 1        | Human Review Test   | Version |  |
+      |  |  | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1  | defaultValue    | dataSource | workflowName | position | workflowDescription | status  |  |
+      |  |  | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Human Review | Test Automation | Input      | Human Review | 1        | Human Review Test   | Version |  |
 

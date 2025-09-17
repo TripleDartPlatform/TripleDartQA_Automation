@@ -1,9 +1,8 @@
 Feature: Convert to Json Component WorkFlow Feature
 
-  @CreateNewConvertToJsonWorkFlowAndPublish
+  @CreateNewConvertToJsonWorkFlowAndPublish @RegressionTest
   Scenario Outline: Create a new Convert to Json Component Workflow and Publish
-#    Given I login to the slate page with username as <email> and password as <password>
-    Then I navigate to the workflow page
+    When I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
     Then I click on add field button
@@ -41,6 +40,6 @@ Feature: Convert to Json Component WorkFlow Feature
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
     Examples:
-      | email                   | password            | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1     | defaultValue               | dataSource | workflowName    | position | workflowDescription  | status  | labelName1 | variableName1 | defaultValue1                    | placeholderValue1 |
-      | "kamesh25491@gmail.com" | "HighPerformance@1" | KeyLBL    | Configure Step | keylbl       | KeyName          | HelpKeyTest   | Convert To Json | Convert To Json Automation | Input      | Convert To Json | 1        | Convert To Json Test | Version | ValueLBL   | valuelbl      | Convert To Json Value Automation | ValueName         |
+      |  |  | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1     | defaultValue               | dataSource | workflowName    | position | workflowDescription  | status  | labelName1 | variableName1 | defaultValue1                    | placeholderValue1 |
+      |  |  | KeyLBL    | Configure Step | keylbl       | KeyName          | HelpKeyTest   | Convert To Json | Convert To Json Automation | Input      | Convert To Json | 1        | Convert To Json Test | Version | ValueLBL   | valuelbl      | Convert To Json Value Automation | ValueName         |
 

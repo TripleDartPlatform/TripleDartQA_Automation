@@ -1,9 +1,8 @@
 Feature: Loop With LLM Component WorkFlow Feature
 
-  @CreateNewLoopWithLLMWorkFlowAndPublish
+  @CreateNewLoopWithLLMWorkFlowAndPublish @RegressionTest
   Scenario Outline: Create a new Loop With LLM Component Workflow and Publish
-    #Given I login to the slate page with username as <email> and password as <password>
-    Then I navigate to the workflow page
+    When I navigate to the workflow page
     Then I click on the Create New Workflow button
     And I click on the <configureStep> element located in the <position> of the <dataSource> element
     Then I click on add field button
@@ -40,5 +39,5 @@ Feature: Loop With LLM Component WorkFlow Feature
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
     Examples:
-      | email                   | password            | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1   | defaultValue         | dataSource | workflowName | position | workflowDescription | status  | secondDataSource | secondPosition | items                 | thirdDataSource | thirdPosition | userMessage                                          | loopVariable |  |
-      | "kamesh25491@gmail.com" | "HighPerformance@1" | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Google Search | what is crm software | Input      | LoopWithLLM  | 1        | LoopWithLLM Test    | Version | Loop             | 2              | step_1.output.organic | LLM             | 3             | Extract only the Title from given Google step result | element      |  |
+      |  |  | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1   | defaultValue         | dataSource | workflowName | position | workflowDescription | status  | secondDataSource | secondPosition | items                 | thirdDataSource | thirdPosition | userMessage                                          | loopVariable |  |
+      |  |  | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Google Search | what is crm software | Input      | LoopWithLLM  | 1        | LoopWithLLM Test    | Version | Loop             | 2              | step_1.output.organic | LLM             | 3             | Extract only the Title from given Google step result | element      |  |
