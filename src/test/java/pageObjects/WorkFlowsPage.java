@@ -49,6 +49,9 @@ public class WorkFlowsPage {
     @FindBy(how = How.XPATH, using = "//button[contains(text(),'Create workflow')]")
     private WebElement btn_CreateWorkFlow;
 
+    @FindBy(how = How.XPATH, using = "//button/span[contains(text(),'Create Blank')]")
+    private WebElement btn_CreateBlankWorkFlow;
+
     @FindBy(how = How.XPATH, using = "//h1[contains(text(),'Workflow')]")
     private WebElement header_Workflows;
 
@@ -209,6 +212,7 @@ public class WorkFlowsPage {
     public void clickOnTheCreateNewWorkflowButton() {
         try {
             utils.clickElement(btn_CreateWorkFlow, 10);
+            utils.clickElement(btn_CreateBlankWorkFlow, 10);
             // Wait for the title to be visible
             wait.until(ExpectedConditions.visibilityOf(header_Workflows));
         } catch (Exception e) {

@@ -27,6 +27,6 @@ Feature: Backlink Overview Component WorkFlow Feature
     Then I click on the Publish button with <workflowName> and <workflowDescription>
     And I verify the workflow is published successfully with <workflowName> and validate the <status>
     Examples:
-      |  |  | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1       | defaultValue    | dataSource | workflowName      | position | workflowDescription    | status  |  |
-      |  |  | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Backlink Overview | Test Automation | Input      | Backlink Overview | 1        | Backlink Overview Test | Version |  |
+      |  |  | labelName | configureStep  | variableName | placeholderValue | helptextValue | dataSource1       | defaultValue            | dataSource | workflowName      | position | workflowDescription    | status  |  |
+      |  |  | TestLBL   | Configure Step | testlbl      | PlaceHolderName  | HelpTest      | Backlink Overview | https://writesonic.com/ | Input      | Backlink Overview | 1        | Backlink Overview Test | Version |  |
 
