@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CommonUtils;
 
 import java.time.Duration;
-import java.util.List;
 
 public class CallToAPIConfigPage {
     WebDriver driver;

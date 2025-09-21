@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;

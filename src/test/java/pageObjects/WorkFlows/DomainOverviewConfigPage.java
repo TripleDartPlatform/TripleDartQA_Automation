@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -11,22 +11,22 @@ import utils.CommonUtils;
 
 import java.time.Duration;
 
-public class FindRelatedKeywordConfigPage {
+public class DomainOverviewConfigPage {
     WebDriver driver;
     CommonUtils utils;
-    public FindRelatedKeywordConfigPage(WebDriver driver) {
+
+    public DomainOverviewConfigPage(WebDriver driver) {
         this.driver = driver;
         this.utils = new CommonUtils(driver);
         PageFactory.initElements(driver, this);
     }
-
     WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(120));
-    @FindBy(how = How.XPATH, using = "//input[@name='keyword']")
-    private WebElement txtBox_KeyWordQuery;
+    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'Domain')]")
+    private WebElement txtBox_DomainOverviewQuery;
 
-    public void clickOnKeywordQueryInputField() {
+    public void clickOnDomainOverviewQueryInputField() {
         try {
-            utils.clickElement(txtBox_KeyWordQuery, 10);
+            utils.clickElement(txtBox_DomainOverviewQuery, 10);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());

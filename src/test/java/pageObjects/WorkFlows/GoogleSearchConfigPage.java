@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 import java.time.Duration;
 
 import factory.DriverFactory;

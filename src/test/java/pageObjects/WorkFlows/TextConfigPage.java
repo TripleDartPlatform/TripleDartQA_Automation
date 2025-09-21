@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -11,22 +11,22 @@ import utils.CommonUtils;
 
 import java.time.Duration;
 
-public class ConvertToHtmlConfigPage {
+public class TextConfigPage {
     WebDriver driver;
     CommonUtils utils;
 
-    public ConvertToHtmlConfigPage(WebDriver driver) {
+    public TextConfigPage(WebDriver driver) {
         this.driver = driver;
         this.utils = new CommonUtils(driver);
         PageFactory.initElements(driver, this);
     }
     WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(120));
-    @FindBy(how = How.XPATH, using = "//textarea[contains(@placeholder,'content')]")
-    private WebElement txtArea_ContentTextArea;
+    @FindBy(how = How.XPATH, using = "//div[contains(@class,'ace_content')]")
+    private WebElement txtArea_LiquidTemplate;
 
-    public void clickOnContentTextAreaInputField() {
+    public void clickOnLiquidTextAreaInputField() {
         try {
-            utils.clickElement(txtArea_ContentTextArea, 10);
+            utils.clickElement(txtArea_LiquidTemplate, 10);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());

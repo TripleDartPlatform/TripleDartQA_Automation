@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.General;
 
 
 import java.util.List;

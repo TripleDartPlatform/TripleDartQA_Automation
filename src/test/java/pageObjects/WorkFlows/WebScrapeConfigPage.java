@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -10,40 +10,36 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CommonUtils;
 
 import java.time.Duration;
-import java.util.List;
 
-public class ConvertToJsonConfigPage {
+public class WebScrapeConfigPage {
     WebDriver driver;
     CommonUtils utils;
 
-    public ConvertToJsonConfigPage(WebDriver driver) {
+    public WebScrapeConfigPage(WebDriver driver) {
         this.driver = driver;
         this.utils = new CommonUtils(driver);
         PageFactory.initElements(driver, this);
     }
     WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(120));
-    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'key')]")
-    private WebElement txtBox_AddKey;
+    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'search')]")
+    private WebElement txtBox_WebsiteURL;
 
-    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'value')]")
-    private WebElement txtBox_AddValue;
+    @FindBy(how = How.XPATH, using = "//button//div[contains(text(),'Markdown Format')]")
+    private WebElement btn_MarkdownFormat;
 
-    @FindBy(how = How.XPATH, using = "//button//*[name()='svg' and contains(@class,'braces')]")
-    private List<WebElement> lbl_BracesInsideSearchBox;
 
-    public void clickOnKeyInputField() {
+    public void clickOnWebsiteURLInputField() {
         try {
-            utils.clickElement(txtBox_AddKey, 10);
+            utils.clickElement(txtBox_WebsiteURL, 10);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
     }
 
-    public void clickOnValueInputField() {
+    public void clickOnMarkdownFormatButton() {
         try {
-            utils.clickElement(txtBox_AddValue, 10);
-            utils.clickElement(lbl_BracesInsideSearchBox.get(1), 10);
+            utils.clickElement(btn_MarkdownFormat, 10);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());

@@ -3,7 +3,7 @@ package hooks;
 import io.cucumber.java.*;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import pageObjects.LoginPage;
+import pageObjects.General.LoginPage;
 import factory.DriverFactory;
 
 

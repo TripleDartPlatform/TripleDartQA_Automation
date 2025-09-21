@@ -3,8 +3,7 @@ package stepdefinitions;
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import pageObjects.LoginPage;
+import pageObjects.General.LoginPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

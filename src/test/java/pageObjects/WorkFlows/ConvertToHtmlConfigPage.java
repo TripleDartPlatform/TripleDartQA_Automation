@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -11,22 +11,22 @@ import utils.CommonUtils;
 
 import java.time.Duration;
 
-public class DomainOverviewConfigPage {
+public class ConvertToHtmlConfigPage {
     WebDriver driver;
     CommonUtils utils;
 
-    public DomainOverviewConfigPage(WebDriver driver) {
+    public ConvertToHtmlConfigPage(WebDriver driver) {
         this.driver = driver;
         this.utils = new CommonUtils(driver);
         PageFactory.initElements(driver, this);
     }
     WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(120));
-    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'Domain')]")
-    private WebElement txtBox_DomainOverviewQuery;
+    @FindBy(how = How.XPATH, using = "//textarea[contains(@placeholder,'content')]")
+    private WebElement txtArea_ContentTextArea;
 
-    public void clickOnDomainOverviewQueryInputField() {
+    public void clickOnContentTextAreaInputField() {
         try {
-            utils.clickElement(txtBox_DomainOverviewQuery, 10);
+            utils.clickElement(txtArea_ContentTextArea, 10);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());

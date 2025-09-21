@@ -2,9 +2,8 @@ package stepdefinitions;
 
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
 
-import pageObjects.*;
+import pageObjects.WorkFlows.*;
 
 public class WorkFlowsSteps {
 
@@ -287,4 +286,5 @@ public class WorkFlowsSteps {
     public void ifitToViewMiniMapOnMinimap() {
         workFlowsPage.fitToViewMiniMap();
     }
+
 }

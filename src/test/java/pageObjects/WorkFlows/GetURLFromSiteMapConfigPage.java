@@ -1,4 +1,4 @@
-package pageObjects;
+package pageObjects.WorkFlows;
 
 import factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -11,22 +11,35 @@ import utils.CommonUtils;
 
 import java.time.Duration;
 
-public class TextConfigPage {
+public class GetURLFromSiteMapConfigPage {
     WebDriver driver;
     CommonUtils utils;
 
-    public TextConfigPage(WebDriver driver) {
+    public GetURLFromSiteMapConfigPage(WebDriver driver) {
         this.driver = driver;
         this.utils = new CommonUtils(driver);
         PageFactory.initElements(driver, this);
     }
     WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(120));
-    @FindBy(how = How.XPATH, using = "//div[contains(@class,'ace_content')]")
-    private WebElement txtArea_LiquidTemplate;
+    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'sitemap')]")
+    private WebElement txtBox_SiteMapURL;
 
-    public void clickOnLiquidTextAreaInputField() {
+    @FindBy(how = How.XPATH, using = "//input[contains(@placeholder,'Max number')]")
+    private WebElement btn_MaxURLs;
+
+
+    public void clickOnSiteMapURLInputField() {
         try {
-            utils.clickElement(txtArea_LiquidTemplate, 10);
+            utils.clickElement(txtBox_SiteMapURL, 10);
+        } catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public void clickAndEnterMaxURLInputField(String maxURL) {
+        try {
+            utils.clickAndSendKeyElementUsingActions(btn_MaxURLs, maxURL);
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
             throw new RuntimeException(e.getMessage());
