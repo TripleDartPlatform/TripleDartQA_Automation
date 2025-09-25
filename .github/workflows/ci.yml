@@ -30,8 +30,5 @@ jobs:
       - name: Print Working Directory
         run: pwd
 
-      - name: Change Directory
-        run: cd src/test/java/runners
-
       - name: Run Cucumber TestRunner
-        run: mvn test
+        run: mvn -Dtest=runner.MyTestRunnerTest test -Dcucumber.filter.tags="@CreateNewBrandKitWorkFlowAndVerify"
