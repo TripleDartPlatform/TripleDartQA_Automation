@@ -18,6 +18,7 @@ Feature: Setting Brand Kit Feature
     And I enter the Sample URL as <SampleURL>
     And I expand Competitors section
     And I enter Competitor names <CompetitorNames> and Competitor URLs as <CompetitorURLs>
+
 #    And I click on Add Competitor button
 #    And I enter Competitor name as <Competitor2> and Competitor URL as <Competitor2URL>
 #    And I click on Add Competitor button
