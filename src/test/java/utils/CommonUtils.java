@@ -131,6 +131,11 @@ public class CommonUtils {
         driver.navigate().refresh();
     }
 
+    public void isElementDisplayed(WebElement element, int timeoutInSeconds) {
+        waitForElementToBeVisible(element, timeoutInSeconds);
+        Assert.assertTrue(element.isDisplayed(), "Element is not displayed as expected.");
+    }
+
 
 }
 

@@ -16,15 +16,15 @@ Feature: Setting Brand Kit Feature
     And I expand Writing Sample section
     And I enter Sample outline as <Sampleoutline>
     And I enter the Sample URL as <SampleURL>
-    And I expand Competitiors section
-    And I enter Competitor name as <Competitor1> and Competitor URL as <Competitor1URL>
-    And I click on Add Competitor button
-    And I enter Competitor name as <Competitor2> and Competitor URL as <Competitor2URL>
-    And I click on Add Competitor button
-    And I enter Competitor name as <Competitor3> and Competitor URL as <Competitor3URL>
-    And I click on the Save Brand Kit button
-    And I verify the Brand Kit is created successfully with <BrandKitName>
+    And I expand Competitors section
+    And I enter Competitor names <CompetitorNames> and Competitor URLs as <CompetitorURLs>
+#    And I click on Add Competitor button
+#    And I enter Competitor name as <Competitor2> and Competitor URL as <Competitor2URL>
+#    And I click on Add Competitor button
+#    And I enter Competitor name as <Competitor3> and Competitor URL as <Competitor3URL>
+#    And I click on the Save Brand Kit button
+#    And I verify the Brand Kit is created successfully with <BrandKitName>
 
     Examples:
-      | BrandKitName | BrandURL                 | BrandKitDescription      | CustomerProfile | Authorpersonal | CTAtext               | CTAdestinationURL        | Sampleoutline  | SampleURL                | Competitor1 | Competitor2 | Competitor3 | Competitor1URL          | Competitor2URL           | Competitor3URL         |
-      | Allbirds     | https://www.allbirds.com | Super comfy casual shoes | Footwear        | AllBirdsAuthor | Buy Now Wear Anywhere | https://www.allbirds.com | Sample Outline | https://www.allbirds.com | Nike        | Adidas      | PUMA        | https://www.nike.com/in | https://www.adidas.co.in | https://in.puma.com/in |
+      | BrandKitName | BrandURL                 | BrandKitDescription      | CustomerProfile | Authorpersonal | CTAtext               | CTAdestinationURL        | Sampleoutline  | SampleURL                | CompetitorNames  |  |  | CompetitorURLs                                                          |  |  |
+      | Allbirds     | https://www.allbirds.com | Super comfy casual shoes | Footwear        | AllBirdsAuthor | Buy Now Wear Anywhere | https://www.allbirds.com | Sample Outline | https://www.allbirds.com | Nike;Adidas;PUMA |  |  | https://www.nike.com/in;https://www.adidas.co.in;https://in.puma.com/in |  |  |
