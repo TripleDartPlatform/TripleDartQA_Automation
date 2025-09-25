@@ -27,5 +27,5 @@ Feature: Setting Brand Kit Feature
 #    And I verify the Brand Kit is created successfully with <BrandKitName>
 
     Examples:
-      | BrandKitName | BrandURL                 | BrandKitDescription      | CustomerProfile | Authorpersonal | CTAtext               | CTAdestinationURL        | Sampleoutline  | SampleURL                | CompetitorNames  |  |  | CompetitorURLs                                                          |  |  |
-      | Allbirds     | https://www.allbirds.com | Super comfy casual shoes | Footwear        | AllBirdsAuthor | Buy Now Wear Anywhere | https://www.allbirds.com | Sample Outline | https://www.allbirds.com | Nike;Adidas;PUMA |  |  | https://www.nike.com/in;https://www.adidas.co.in;https://in.puma.com/in |  |  |
+      | BrandKitName | BrandURL                 | BrandKitDescription      | CustomerProfile | Authorpersonal | CTAtext               | CTAdestinationURL        | Sampleoutline  | SampleURL                | CompetitorNames  |  |  | CompetitorURLs                                                          |
+      | Allbirds     | https://www.allbirds.com | Super comfy casual shoes | Footwear        | AllBirdsAuthor | Buy Now Wear Anywhere | https://www.allbirds.com | Sample Outline | https://www.allbirds.com | Nike;Adidas;PUMA |  |  | https://www.nike.com/in;https://www.adidas.co.in;https://in.puma.com/in |

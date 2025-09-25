@@ -1,20 +1,12 @@
 package runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import jdk.jfr.internal.Logger;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.Suite;
+import org.junit.platform.suite.api.SelectPackages;
+import org.junit.platform.suite.api.ConfigurationParameter;
 
-
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        features="src/test/resources/features",
-        glue={"stepdefinitions", "hooks"}
-        ,tags = "@CreateNewBrandKitWorkFlowAndVerify"
-        ,plugin = { "pretty",
-                    "html:target/cucumber-reports.html"
-                    ,"json:target/cucumber-reports.json"
-                    ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-)
-public class MyTestRunnerTest  {
+@Suite
+@SelectPackages("features")
+@ConfigurationParameter(key = "glue", value = "stepdefinitions; hooks")
+@ConfigurationParameter(key = "plugin", value = "pretty,html:target/cucumber-reports.html,json:target/cucumber-reports.json,com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:")
+public class MyTestRunnerTest {
 }

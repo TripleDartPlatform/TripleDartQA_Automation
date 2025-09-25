@@ -1,4 +1,5 @@
 package factory;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -7,7 +8,8 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\java\\drivers/chromedriver.exe");
+            // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
+            // + "\\src\\test\\java\\drivers/chromedriver.exe");
             driver = new ChromeDriver();
         }
         return driver;
@@ -20,10 +22,10 @@ public class DriverFactory {
         }
     }
 
-//    public static void closeDriver() {
-//        if (driver != null) {
-//            driver.close();
-//            driver = null;
-//        }
-//    }
+    // public static void closeDriver() {
+    // if (driver != null) {
+    // driver.close();
+    // driver = null;
+    // }
+    // }
 }

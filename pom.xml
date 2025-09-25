@@ -1,122 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>Slate_Automation_Framework</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>Archetype - Cucumber_Maven</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                             
+    <modelVersion>4.0.0</modelVersion>
 
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+    <groupId>org.example</groupId>
+    <artifactId>Slate_Automation_Framework</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Slate Automation Framework</name>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cucumber.version>7.27.2</cucumber.version>
+        <selenium.version>4.31.0</selenium.version>
+        <extent.version>5.1.2</extent.version>
+    </properties>
+
+    <dependencies>
+        <!-- Cucumber -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.13.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite-engine</artifactId>
+            <version>1.13.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 4 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- TestNG (optional, if you use it) -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.11.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <!-- Extent Reports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.14.0</version>
+        </dependency>
+
+        <!-- Log4j 2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.25.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.25.1</version>
+        </dependency>
     <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>7.22.0</version>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>5.12.1</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>7.27.2</version>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna-platform</artifactId>
+      <version>5.12.1</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
     <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-jvm</artifactId>
-      <version>7.22.0</version>
-      <type>pom</type>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-jvm-deps</artifactId>
-      <version>1.0.6</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.0</version>
       <scope>test</scope>
     </dependency>
+    </dependencies>
 
-    <!-- https://mvnrepository.com/artifact/junit/junit -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
+    <build>
+        <plugins>
+            <!-- Compiler plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <release>${maven.compiler.release}</release>
+                </configuration>
+            </plugin>
 
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-core</artifactId>
-      <version>7.21.1</version>
-    </dependency>
+            <!-- Surefire plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.3</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                        <include>**/*TestRunner.java</include>
+                    </includes>
+                    <systemPropertyVariables>
+                        <cucumber.publish.enabled>false</cucumber.publish.enabled>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.31.0</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-chrome-driver</artifactId>
-      <version>4.31.0</version>
-     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-junit -->
-    <dependency>
-      <groupId>org.apache.maven.surefire</groupId>
-      <artifactId>surefire-junit</artifactId>
-      <version>2.6</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.11.0</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>5.1.2</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
-    <dependency>
-      <groupId>tech.grasshopper</groupId>
-      <artifactId>extentreports-cucumber7-adapter</artifactId>
-      <version>1.14.0</version>
-    </dependency>
-  <!-- Log4j API -->
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-api</artifactId>
-        <version>2.25.1</version> <!-- Replace with the latest version -->
-      </dependency>
-
-      <!-- Log4j Core (required for runtime) -->
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-core</artifactId>
-        <version>2.25.1</version> <!-- Replace with the latest version -->
-      </dependency>
-
-     </dependencies>
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>3.5.3</version>
-       </plugin>
-    </plugins>
-  </reporting>
+<profiles>
+  <profile>
+    <id>cucumber-summary</id>
+    <properties>
+      <cucumber.plugin>summary</cucumber.plugin>
+    </properties>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.5.3</version>
+          <configuration>
+            <systemPropertyVariables>
+              <cucumber.publish.enabled>false</cucumber.publish.enabled>
+              <cucumber.plugin>${cucumber.plugin}</cucumber.plugin>
+            </systemPropertyVariables>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
 </project>
