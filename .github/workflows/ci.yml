@@ -2,9 +2,9 @@ name: QA Automation CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ fix/build-dependencies ]
   pull_request:
-    branches: [ master ]
+    branches: [ fix/build-dependencies ]
 
 jobs:
   test:
