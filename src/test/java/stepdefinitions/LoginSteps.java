@@ -58,7 +58,7 @@ public class LoginSteps {
         }
         loginPage = new LoginPage(DriverFactory.getDriver());
         loginPage.signIn(email, password);
-        System.out.println("LoggedIn successfully.");
+        //System.out.println("LoggedIn successfully.");
         Thread.sleep(5000); // Wait for 5 seconds to ensure the page loads completely
         logger.info("LoggedIn successfully.");
     }
@@ -80,7 +80,7 @@ public class LoginSteps {
     public void iLogoutFromTheApplication() {
         try {
             loginPage.logout();
-            System.out.println("Logged out successfully.");
+            //System.out.println("Logged out successfully.");
             logger.info("Logged out successfully.");
         } catch (Exception e) {
             // Print the exception message to the console
