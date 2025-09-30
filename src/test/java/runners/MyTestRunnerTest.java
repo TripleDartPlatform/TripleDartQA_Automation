@@ -2,7 +2,6 @@ package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import jdk.jfr.internal.Logger;
 import org.junit.runner.RunWith;
 
 
@@ -10,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features="src/test/resources/features",
         glue={"stepdefinitions", "hooks"}
-        ,tags = "@CreateNewBrandKitWorkFlowAndVerify"
+        ,tags = "@Logout"
         ,plugin = { "pretty",
                     "html:target/cucumber-reports.html"
                     ,"json:target/cucumber-reports.json"
