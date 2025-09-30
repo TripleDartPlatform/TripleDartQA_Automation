@@ -3,6 +3,7 @@ package runners;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
+import org.testng.annotations.Test;
 
 
 @RunWith(Cucumber.class)
@@ -15,5 +16,10 @@ import org.junit.runner.RunWith;
                     ,"json:target/cucumber-reports.json"
                     ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
+
 public class MyTestRunnerTest  {
+    @Test
+    public void test() {
+        System.out.println("Testng test method executed");
+    }
 }

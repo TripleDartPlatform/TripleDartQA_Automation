@@ -2,7 +2,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="hooks.Hooks"/>
+            <class name="runners.MyTestRunnerTest"/>
         </classes>
     </test>
 </suite>
