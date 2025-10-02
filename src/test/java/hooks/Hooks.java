@@ -12,7 +12,7 @@ public class Hooks {
     static LoginPage loginPage;
     private WebDriver driver;
     public static String scenarioName;
-    @BeforeSuite
+    @Before
     public void setUpSuite() {
         driver = DriverFactory.getDriver();
         driver.get("https://app.slatehq.ai/ws/114/workflows");
@@ -22,7 +22,7 @@ public class Hooks {
         System.out.println("Suite setup complete.");
     }
 
-    @AfterSuite
+    @After
     public void tearDownSuite() {
         DriverFactory.quitDriver();
         System.out.println("Suite teardown complete.");

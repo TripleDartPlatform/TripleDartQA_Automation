@@ -1,20 +1,19 @@
 package runners;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
 
-
-@RunWith(Cucumber.class)
 @CucumberOptions(
-        features="src/test/resources/features",
-        glue={"stepdefinitions", "hooks"}
-        ,tags = "@Logout"
-        ,plugin = { "pretty",
-                    "html:target/cucumber-reports.html"
-                    ,"json:target/cucumber-reports.json"
-                    ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+        features = "src/test/resources/features",
+        glue = {"stepdefinitions", "hooks"},
+        plugin = {
+                "pretty",
+                "html:target/cucumber-report.html",
+                "json:target/cucumber.json"
+                ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+        },
+        monochrome = true,
+        tags = "@Logout"   // <-- Only run scenarios tagged with @smoke
 )
-
-public class MyTestRunnerTest  {
+public class MyTestRunnerTest extends AbstractTestNGCucumberTests {
 }
