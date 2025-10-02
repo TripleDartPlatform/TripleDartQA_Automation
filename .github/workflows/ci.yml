@@ -2,9 +2,9 @@ name: QA Automation CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ testNG ]
   pull_request:
-    branches: [ master ]
+    branches: [ testNG ]
 
 jobs:
   test:
@@ -31,4 +31,5 @@ jobs:
         run: pwd
 
       - name: Run Cucumber TestRunner
-        run: mvn -Dtest=runner.MyTestRunnerTest test -Dcucumber.filter.tags="@CreateNewBrandKitWorkFlowAndVerify"
+        run: mvn -Dtest=runners.MyTestRunnerTest test
+#        -Dcucumber.filter.tags="@CreateNewBrandKitWorkFlowAndVerify"

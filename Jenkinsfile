@@ -10,7 +10,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Pull your repo from Git
-                'https://github.com/TripleDartPlatform/TripleDartQA_Automation.git'
+                git branch: 'testNG',
+                url:'https://github.com/TripleDartPlatform/TripleDartQA_Automation.git'
             }
         }
 

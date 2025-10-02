@@ -13,19 +13,27 @@ public class Hooks {
     private WebDriver driver;
     public static String scenarioName;
     @Before
-    public void setUpSuite() {
+    public void setUpScenario() {
         driver = DriverFactory.getDriver();
         driver.get("https://app.slatehq.ai/ws/114/workflows");
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         loginPage.signIn("kamesh25491@gmail.com", "HighPerformance@1");
-        System.out.println("Suite setup complete.");
+        System.out.println("Scenario login complete.");
     }
 
     @After
-    public void tearDownSuite() {
-        DriverFactory.quitDriver();
-        System.out.println("Suite teardown complete.");
+    public void tearDownScenario() throws InterruptedException  {
+        loginPage = new LoginPage(DriverFactory.getDriver());
+        loginPage.logout();
+        System.out.println("Scenario logout complete.");
+    }
+
+    @AfterAll
+    public static void tearDownSuite() {
+        //extent.flush();
+        DriverFactory.getDriver().quit();
+        System.out.println("Driver Quit successfully.");
     }
 }
 //    @BeforeTest
