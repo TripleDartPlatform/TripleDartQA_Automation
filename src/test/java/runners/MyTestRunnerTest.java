@@ -13,7 +13,7 @@ import io.cucumber.testng.CucumberOptions;
                 ,"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
-        tags = "@Logout"   // <-- Only run scenarios tagged with @smoke
+        tags = "@CreateNewBrandKitWorkFlowAndVerify"   // <-- Only run scenarios tagged with @smoke
 )
 public class MyTestRunnerTest extends AbstractTestNGCucumberTests {
 }
