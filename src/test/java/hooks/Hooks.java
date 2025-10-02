@@ -32,7 +32,7 @@ public class Hooks {
     @AfterAll
     public static void tearDownSuite() {
         //extent.flush();
-        DriverFactory.getDriver().quit();
+        DriverFactory.quitDriver();
         System.out.println("Driver Quit successfully.");
     }
 }
