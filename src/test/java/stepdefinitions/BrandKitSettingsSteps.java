@@ -1,13 +1,8 @@
 package stepdefinitions;
 
-
 import factory.DriverFactory;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
-
-import pageObjects.*;
 import pageObjects.Settings.BrandKit.BrandKitSettingsPage;
-import pageObjects.WorkFlows.WorkFlowsPage;
 
 public class BrandKitSettingsSteps {
     BrandKitSettingsPage brandKitSettingsPage = new BrandKitSettingsPage(DriverFactory.getDriver());

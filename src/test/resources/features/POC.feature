@@ -45,7 +45,7 @@ Feature: POC Feature
         Given I login to the slate page with username as <email> and password as <password>
         Then I navigate to the workflow page
         And I logout from the application
-#        And I login to the slate page with username as <email> and password as <password>
+  #        And I login to the slate page with username as <email> and password as <password>
 
         Examples:
           | email                   | password            |  |  |  |  |  |  |
