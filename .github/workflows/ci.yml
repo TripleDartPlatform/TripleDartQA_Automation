@@ -30,6 +30,9 @@ jobs:
       - name: Print Working Directory
         run: pwd
 
-      - name: Run Cucumber TestRunner
-        run: mvn -Dtest=runners.MyTestRunnerTest test
+      - name: Run Tests
+        run: mvn test
+
+#      - name: Run Cucumber TestRunner
+#        run: mvn -Dtest=runners.MyTestRunnerTest test
 #        -Dcucumber.filter.tags="@CreateNewBrandKitWorkFlowAndVerify"
