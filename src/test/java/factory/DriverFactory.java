@@ -17,7 +17,7 @@ public class DriverFactory {
 
             ChromeOptions options = new ChromeOptions();
 
-            options.addArguments("--headless=new"); // Use new headless mode
+            //options.addArguments("--headless=new"); // Use new headless mode
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
